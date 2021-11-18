@@ -1,0 +1,10 @@
+    Zainstalowałem wszystkie narzędzia wymienione w nagraniach
+    Skonfigurowałem Visual Studio Code
+    Uruchomiłem swoją pierwszą aplikację
+    Zmieniłe wartość “Hello World” na inną i zbadałem zachowanie programu - poniżej listing kodu
+      Dziwne bo w .NET6 nie pojawił sie listing prezentowan jak na nagraniu
+    W razie problemów pisz na grupie - poradziłem sobie i przepisałem z nagrania brakujące linie (widoczne w następnym zadaniu)
+
+
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Forever Young"); //Zmieniono string Hello World!
