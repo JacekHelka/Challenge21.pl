@@ -1,0 +1,31 @@
+
+
+    Skonfigurowałe Visual Studio Code i zainstalowałem wtyczkę do pracy z językiem C# (Wtyczka auutomatycznie została podpowiedziana przez Visual Studio Code)
+    Przygotowałem swoje Visual Studio Code do debugowania
+    Napisałem i zbudowałem projekt, który wyświetlił na konsoli pierwszy parametr podany przy uruchomieniu programu - listing poniżej wynik w pliku PNG
+    Skopiowałem wszystkie wygenerowane pliki do nowego folderu (na pulpicie) i uruchomiłem go z pomocą konsoli
+    Pomyślałem nad swoim własnym projektem. Prawdopodobnie będzie podobny do tego z lekcji.
+
+
+
+
+
+
+// See https://aka.ms/new-console-template for more information
+using System;
+
+namespace ChallengeApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine($"Forever {args[0]}");
+        }
+            
+ 
+    }
+    
+
+}
+
