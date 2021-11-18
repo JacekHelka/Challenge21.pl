@@ -1,0 +1,87 @@
+
+
+    1. Spróbuj wykonać kilka operacji na następujących zmiennych: int, long, float, decimal, double, string. 
+    Postaraj się samodzielnie odkryć, jaka jest między nimi różnica i jak ich używać w jednak operacji matematycznej.
+    
+    Różnica pomiędzy typami to zakres minimalnej i maksymalnej mozliwej do przypisania liczby.
+    
+    
+    
+    Dokończ opis swojego pomysłu na projekt z wczoraj i opublikuj go na grupie. 
+    Jeżeli nie masz pomysłu to trzymaj się dziennika ocen, na podstawie którego tworzone są kolejne Zadania Domowe
+    W razie problemów pisz na grupie
+
+
+
+
+/** Zadanie domowe dzień 4 - pomysł na projekt. Idealnie jakby użytkownik wprowadzał liczby, na podstawie których można obliczać statystyki.
+*   Program Jacka ;-) ma za zadanie:
+*   1. Pobrać dowolny numer telefonu komórkowego od użytkownika (9 cyfr)
+*   2. Pobrać trzy ulubione cyfr użytkownika (3 cyfry)
+*   3. Obliczyć ile procent ulubionych cyfr użytkownika występuje w podanym numerze telefonicznym
+*       1 cyfra - 33,3%, 2cyfry - 66,6%, 3 cyfry - 100%
+*   Wielokrotne wystąpienie danej cyfry nie wpływa na wynik.
+*/
+
+
+
+
+// See https://aka.ms/new-console-template for more information
+using System;
+
+namespace ChallengeApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //int a = 10; // Powołanie zmiennej a int - typ liczby całkowite
+            //int b = 11; // Powołanie zmiennej a int - typ liczby całkowite
+            //double a = 10.0;// Powołanie zmiennej a int - typ liczby zmienno przecinkowe podwójnej precyzji
+            //double b = 11.32323;// Powołanie zmiennej a int - typ liczby zmienno przecinkowe podwójnej precyzji
+            float c = 10.0F; // Powołanie zmiennej c typu float - zmienno przecinkowej pojedyńczej precyzji
+            var d = 11.1f;//  Powołanie zmiennej c typu float - zmienno przecinkowej pojedyńczej precyzji automatycznie
+            
+            var a = 10.0;// Powołanie zmiennej a int - typ liczby zmienno przecinkowe podwójnej precyzji automatycznie
+            var b = 11.32323;// Powołanie zmiennej a int - typ liczby zmienno przecinkowe podwójnej precyzji automatycznie
+            var name = "Jacek"; //c jako zmianna typu string automatycznie
+
+            var result = a + b;
+
+            var dd = d + b; // Float + Double = Double
+            var ddd = a + name; // Double + String = String
+
+            int     ZmiennaInt      = 20;
+            long    ZmiennaLong     = -1000;
+            float   ZmiennaFloat    = 20.1f;
+            decimal ZmiennaDecimal  = -1000.1m;
+            double  ZmiennaDouble   = 1000.1;
+            string  ZmiennaString   = "Liczba? Nie, string!";
+
+            var SumaIntDouble = ZmiennaInt + ZmiennaDouble;
+            Console.WriteLine(SumaIntDouble);
+            var IloczynLongDecimal = ZmiennaLong * ZmiennaDecimal;
+            Console.WriteLine(IloczynLongDecimal);
+            //var IlorazStringFloat = ZmiennaString / ZmiennaFloat; //Błąd wykonania - działanieniemożliwe do wykonania
+            var IlorazLongFloat = ZmiennaLong / ZmiennaFloat;
+            Console.WriteLine(IlorazLongFloat);
+
+
+
+            if (args.Length > 0)
+            {
+                Console.WriteLine($"Forever {args[0]}"); //Blok kodu warunku if
+            }
+            else
+            {
+                Console.WriteLine("Forever"); //Blok kodu warunku if else  
+            }
+            
+        }
+            
+
+    }
+    
+
+}
+
