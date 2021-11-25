@@ -1,0 +1,131 @@
+using System;
+
+namespace ChallengeApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+/** Zadanie domowe: pomysł na projekt. Idealnie jakby użytkownik wprowadzał liczby, na podstawie których można obliczać statystyki.
+*   Program Jacka ;-) ma za zadanie 
+*   1. Pobrać numer telefonu od użytkownika 9 cyfr
+*   2. Pobrać trzy ulubione cyfr użytkownika
+*   3. Obliczyć ile procent ulubionych cyfr użytkownika występuje w podanym numerze telefonicznym
+*
+*/
+			string telefon = "";
+			string cyfry = "";
+			int wynik = 0;
+            int wyszukiwanie = 0;
+            bool telefonCyfry = false;
+            bool cyfryCyfry = false;
+			
+			//Pobranie jako string i sprawdzenie poprawności danych 
+            Console.Clear();
+			Console.WriteLine("Program sprawdza ile Twoich ulubionych liczb znajduje się w podanym numerze telefonu.");
+			Console.WriteLine("Aby kontynuaować aciśnij ENTER");
+			Console.ReadLine();
+			Console.WriteLine(" ");
+			do {
+                do
+                    {
+                        Console.WriteLine("Podaj numer telefonu 9 cyfr [przykładowo: 600700800] i naciśnij ENTER");
+                        telefon = Console.ReadLine();
+                        if (telefon.Length != 9 )
+                            {
+                                Console.WriteLine("Podany numer telefonu nie składa się z 9 cyfr!");
+                            } 
+                        if (telefon.All(Char.IsDigit))
+                        {
+                            telefonCyfry = true;
+                        }
+                        else
+                        {
+                            telefonCyfry = false;
+                            Console.WriteLine("Podany numer telefonu nie składa się z 9 cyfr!");;
+                        }       
+                    }   while (telefon.Length != 9);
+                }   while (telefonCyfry != true);
+
+			    Console.WriteLine(" ");
+            do
+            {
+                do
+                    {
+                        Console.WriteLine("Podaj trzy swoje ulubione cyfry [przykładowo: 123] i naciśnij ENTER");
+                        cyfry = Console.ReadLine();
+                        if (cyfry.Length != 3)
+                            {
+                                Console.WriteLine("Nie podałeś trzech cyfr!");
+                            }
+                        if (cyfry.All(Char.IsDigit))
+                            {
+                                cyfryCyfry = true;
+                            } 
+                            else
+                            {
+                                cyfryCyfry = false;
+                                Console.WriteLine("Nie podałeś trzech cyfr!");
+                            }              
+                } while (cyfry.Length != 3);
+            } while (cyfryCyfry != true);
+
+			    Console.WriteLine(" ");
+			
+			//Zmiana string to array
+			char[] telefonArray = new char[telefon.Length]; 
+			for (int i = 0; i < telefon.Length; i++)
+			{
+				telefonArray[i] = telefon[i]; 
+			} 
+			char[] cyfryArray = new char[cyfry.Length];
+			for (int i = 0; i < cyfry.Length; i++)
+			{
+				cyfryArray[i] = cyfry[i]; 
+			}
+			
+			
+			//Sprawdzenie czy cyfra występuje w telefonie
+			for (int i = 0; i < cyfry.Length; i++)
+			{
+				for (int j = 0; j < telefon.Length; j++)				
+				{
+					if (cyfryArray[i] == telefonArray[j])
+					{
+						wyszukiwanie++; 
+					}
+				}
+                if (wyszukiwanie > 0)
+					{
+						wynik++;
+                        wyszukiwanie = 0;
+					}
+
+			}
+			//Prezentacja wyniku
+            if (wynik == 0)
+            {
+                Console.WriteLine("Niestety podany numer telefonu nie zawiera Twoich ulubionych cyfr."); 
+            }
+            if (wynik == 1)
+            {
+                Console.WriteLine("Podany numer telefonu zawiera 33.3% Twoich ulubionych cyfr."); 
+            }
+            if (wynik == 2)
+            {
+                Console.WriteLine("Wow! Podany numer telefonu zawiera 66.6% Twoich ulubionych cyfr."); 
+            }
+			if (wynik == 3)
+            {
+                Console.WriteLine("Super! Podany numer telefonu zawiera 100% Twoich ulubionych cyfr."); 
+            }
+            	Console.WriteLine("Koniec. Naciśnij dowolny klawisz"); 
+                Console.ReadKey();
+        }
+            
+
+    }
+    
+
+}
+
